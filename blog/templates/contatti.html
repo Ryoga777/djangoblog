@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block head_title %} Contact Me | {{ block.super }} {% endblock head_title %}</title>
+
+{% block content %}
+
+<div class="row col-8">
+    <div class="col-md">
+    <h2>Contact Me</h2>
+    <br><br>
+        <form name="modulo" class="form-group">
+            Email Address:
+                <input type="text" name="email" class="form-control">
+            Subject:
+            <input type="text" name="oggetto" class="form-control"> <br />
+            Message:<br />
+            <textarea name="messaggio" rows="10" cols="40" class="form-control"></textarea> <br/>
+            <button type="submit" class="btn btn-primary mb-2" onClick="Email()">SEND MAIL</button>
+    </form>
+    <br><br>
+    If the form is not working, write me an email: 
+    <a href="mailto:you@youremail.com"><b>you@youremail.com</b></a>
+    <br><br>
+    
+
+    <script type="text/javascript">
+    function Email() {
+        var email = document.modulo.email.value;
+        var oggetto = document.modulo.oggetto.value;
+        var messaggio = document.modulo.messaggio.value;
+        if ((email.indexOf("@") == (-1)) || (email == "") || (email == "undefined")) {
+            alert("Insert a valid email address");
+            document.modulo.email.focus();
+        }
+        else if ((oggetto == "") || (oggetto == "undefined")) {
+            alert("Insert a Subject");
+            document.modulo.oggetto.focus();
+        }
+        else if ((messaggio == "") || (messaggio == "undefined")) {
+            alert("Insert a message");
+            document.modulo.messaggio.focus();
+        }
+        else {
+            location.href = "mailto:" + email + "?Subject=" + oggetto + "&Body=" + messaggio;
+            alert("E-Mail sent!");
+        }
+    }
+    </script>
+    </div>
+</div>
+
+{% endblock content %}

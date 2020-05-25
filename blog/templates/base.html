@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %}A Simple Django Website by Roberto Romagnoli{% endblock head_title %}</title>
+
+    <!-- Font Awesome CDN-->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CDN (CSS) -->
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+
+    <!-- Personal CSS Sheet -->
+    <link rel="stylesheet"
+    href="{% static 'css/blog.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/">A DJANGO SITE by Roberto Romagnoli</a>
+  <button class="navbar-toggler" type="button"
+  data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+  aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/portfolio">PORTFOLIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contatti" tabindex="-1" aria-disabled="true">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+    <ul class="navbar-nav">
+        <li><a href="https://www.facebook.com/YOURFACEBOOKPAGE" target="_blank"
+          class="fa fa-facebook"></a></li>
+        <li><a href="https://www.twitter.com/YOURTWITTERPROFILE" target="_blank"
+          class="fa fa-twitter"></a></li>
+        <li><a href="https://www.linkedin.com/in/YOURLINKEDINPROFILE" target="_blank"
+          class="fa fa-linkedin"></a></li>
+        <li><a href="https://www.instagram.com/YOURINSTAGRAMPROFILE" target="_blank"
+          class="fa fa-instagram"></a></li>
+    </ul>
+</nav>
+<!--End Navbar-->
+
+<!-- Cover -->
+<section class="cover" style="background-image: url({% static 'img/banner.jpeg' %});">
+  <div class="cover_filter"></div>
+  <div class="cover_caption">
+    <div class="cover_caption_copy">
+      <h1>YOUR NAME</h1>
+      <h5>Your profession // Your target</h5>
+    </div>
+  </div>
+</section>
+<!--End Cover-->
+
+<!-- Content Container -->
+<div class="container contenuto">
+<div class="row">
+    <!--Left Column-->
+      {% block content %}
+
+      {% endblock content %}
+   <!--End of Left Column-->
+
+    <!--Right Column-->
+    <div class="col col-4" style="float:right;">
+      <center>
+
+        <!-- ABOUT -->
+        <h4>Who Am I</h4>
+        <img src="{% static 'img/io.jpg'%}" width=150px><br>
+        Your Profession<br />
+        Small Description.<br />
+        <i>Replace this with your photo and your description.</i>
+        <br /><br />
+
+        <!--TWITTER WIDGET - Replace with your Twitter profile-->
+        <a class="twitter-timeline" data-width="300" data-height="350" data-theme="light"
+        href="https://twitter.com/Rob_Romagnoli?ref_src=twsrc%5Etfw">Latest Tweets</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br><br>
+
+        <!--FACEBOOK WIDGET (LIKE-BOX) Replace with your Facebook Page -->
+        <div class="fb-page" data-href="https://www.facebook.com/robertoromagnolitech" 
+        data-tabs="timeline" data-width="" data-height="250" data-small-header="false" 
+        data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/robertoromagnolitech" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/robertoromagnolitech">Roberto Romagnoli</a></blockquote></div>
+
+        <!-- GITHUB WIDGET - Replace with your Github Widget-->
+        My Software <br>
+        <div class="github-widget" data-username="Ryoga777"></div>
+        <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
+      </center>
+    </div>
+      <!--End of Right Column-->
+    
+  </div>
+</div>
+<!--End of Content Container-->
+
+<!--Footer-->
+<footer>
+  <center>
+    <p style="color:antiquewhite">Site By Roberto Romagnoli - Powered by Django & Bootstrap</p>
+  </center>
+<a href="#" style="color:red">Up</a>
+</footer>
+<!--End of footer-->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v6.0"></script>
+
+<!-- JQuery CDN-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- Bootstrap CDN (JavaScript) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"></script>
+</body>
+</html>

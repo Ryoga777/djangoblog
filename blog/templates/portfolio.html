@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for object in object_list %}
+    <a href="/{{ object.id }}/{{ object.slug }}/"><h1>{{ object.nome }} </h1></a>
+        <p>{{ object.contenuto|safe|linebreaks|truncatewords_html:50 }} </p>
+        <a href="/{{ object.id }}/{{ object.slug }}/">Keep on reading...</a>
+    {% endfor %}
+
+<div align ="center">
+    {% if page_obj.has_previous %}
+       <<<<a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {%  if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>>>>
+    {% endif %}
+
+</div>
+
+{% endblock content %}

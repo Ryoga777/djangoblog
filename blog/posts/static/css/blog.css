@@ -1,0 +1,75 @@
+body {
+  background-color: #404040;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white; 
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+/* unvisited link */
+a {
+color: white;
+text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+color: white;
+text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: lightgray;
+text-decoration: underline overline;
+}
+
+/* selected link */
+a:active {
+color: white;
+text-decoration: none;
+}
+
+/*Social Icons (on the navbar)*/
+
+.fa {
+padding: 10px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+text-decoration: none;
+}
+
+.fa-facebook {
+  color: white
+}
+
+.fa-twitter {
+  color: white
+}
+
+.fa-linkedin {
+  color: white
+}
+
+.fa-instagram {
+  color: white
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
